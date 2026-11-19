@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AMED AI 49</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
+header{padding:22px;background:#121a2e;border-bottom:1px solid #26334d}
+h1{margin:0;color:#62d9ff}
+main{max-width:1000px;margin:auto;padding:22px}
+.panel{background:#141e33;border:1px solid #293b59;border-radius:16px;padding:20px;margin:18px 0}
+.agents{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px}
+.agent{background:#202d46;padding:16px;border-radius:12px;text-align:center}
+.chat{height:300px;overflow:auto;background:#0b1427;padding:15px;border-radius:12px}
+input{width:80%;padding:14px;border-radius:9px;border:0;margin-top:12px}
+button{padding:14px;background:#36bce8;color:#07111c;border:0;border-radius:9px;font-weight:bold;cursor:pointer}
+</style>
+</head>
+<body>
+<header>
+<h1>AMED AI 49</h1>
+<p>Yapay Zekâ Şirket Yönetim Merkezi</p>
+</header>
+<main>
+<section class="panel">
+<h2>Yönetim Merkezi</h2>
+<p>Hoş geldin. Amed AI sistemine hazır.</p>
+</section>
+<section class="panel">
+<h2>Uzman Ajanlar</h2>
+<div class="agents">
+<div class="agent">Amed<br>Genel Müdür</div>
+<div class="agent">Nasrettin<br>E-ticaret</div>
+<div class="agent">Mustafa<br>Strateji</div>
+<div class="agent">Mehmet<br>Teknoloji</div>
+<div class="agent">Ali<br>Operasyon</div>
+<div class="agent">Selçuk<br>Araştırma</div>
+<div class="agent">Ağit<br>Analiz</div>
+</div>
+</section>
+<section class="panel">
+<h2>Amed AI ile Sohbet</h2>
+<div class="chat" id="chat">
+<p>AMED: Merhaba! Yönetim merkezine hoş geldin.</p>
+</div>
+<input id="message" placeholder="Amed'e mesaj yaz...">
+<button onclick="sendMessage()">Gönder</button>
+</section>
+</main>
+<script>
+function sendMessage(){
+const input=document.getElementById("message");
+const chat=document.getElementById("chat");
+if(!input.value.trim())return;
+const p=document.createElement("p");
+p.textContent="SEN: "+input.value;
+chat.appendChild(p);
+input.value="";
+chat.scrollTop=chat.scrollHeight;
+}
+</script>
+</body>
+</html>
